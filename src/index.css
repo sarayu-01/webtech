@@ -61,6 +61,16 @@ body {
 .login-form, .add-form { max-width:520px; margin:0 auto; display:flex; flex-direction:column; gap:8px; background: rgba(255,255,255,0.03); padding:12px; border-radius:10px; }
 .add-form input, .add-form select, .login-form input { padding:10px; border-radius:8px; border:none; background: rgba(255,255,255,0.04); color:white; }
 
+/* Login grid: two equal columns (left/right) and boxed sections */
+.login-grid { display:flex; gap:1rem; margin-top:1rem; align-items:flex-start; }
+.login-section { flex:1; min-width:260px; background: rgba(255,255,255,0.03); padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.06); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+.login-section h3 { margin-top:0; color: var(--accent); }
+.login-section .login-form { max-width:100%; margin:0; background:transparent; padding:0; box-shadow:none; }
+
+@media(max-width:720px){
+  .login-grid { flex-direction:column; }
+}
+
 /* Reviews list */
 .reviews-list { display:flex; flex-direction:column; gap:10px; }
 .review-row { background: rgba(255,255,255,0.03); padding:10px; border-radius:8px; }

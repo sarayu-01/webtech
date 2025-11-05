@@ -1,0 +1,36 @@
+// export two arrays: seedMovies, seedBooks
+export const seedMovies = [
+  { id: 201, title: "The Shawshank Redemption", genre: "Drama", rating: 9.3, image: "https://image.tmdb.org/t/p/w500/9O7gLzmreU0nGkIB6K3BsJbzvNv.jpg" },
+  { id: 202, title: "The Godfather", genre: "Crime", rating: 9.2, image: "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" },
+  { id: 203, title: "The Dark Knight", genre: "Action", rating: 9.0, image: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" },
+  { id: 204, title: "12 Angry Men", genre: "Drama", rating: 9.0, image: "https://image.tmdb.org/t/p/w500/ppd84D0iBdfPQ6sFw0i2pbqBjLL.jpg" },
+  { id: 205, title: "Schindler's List", genre: "Biography", rating: 8.9, image: "https://image.tmdb.org/t/p/w500/sF1U4EUQS8YHUYjNl3pS2F9JTri.jpg" },
+  { id: 206, title: "Pulp Fiction", genre: "Crime", rating: 8.9, image: "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg" },
+  { id: 207, title: "The Lord of the Rings: The Return of the King", genre: "Fantasy", rating: 8.9, image: "https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg" },
+  { id: 208, title: "Forrest Gump", genre: "Drama", rating: 8.8, image: "https://image.tmdb.org/t/p/w500/h5J4W4veyxMXDMjeNxC9M0l5Ko7.jpg" },
+  { id: 209, title: "Inception", genre: "Sci-Fi", rating: 8.7, image: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg" },
+  { id: 210, title: "Fight Club", genre: "Drama", rating: 8.8, image: "https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3BmJK.jpg" },
+  { id: 211, title: "The Matrix", genre: "Sci-Fi", rating: 8.7, image: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5d.jpg" },
+  { id: 212, title: "Goodfellas", genre: "Crime", rating: 8.7, image: "https://image.tmdb.org/t/p/w500/aKuFiU82sOxBtUtUy3kT8O0hS3N.jpg" },
+  { id: 213, title: "Se7en", genre: "Crime", rating: 8.6, image: "https://image.tmdb.org/t/p/w500/6yoghtyTpznpBAs6jR3zvY2B1Y7.jpg" },
+  { id: 214, title: "Interstellar", genre: "Sci-Fi", rating: 8.6, image: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" },
+  { id: 215, title: "The Green Mile", genre: "Drama", rating: 8.6, image: "https://image.tmdb.org/t/p/w500/velWPhVMQeQBiE19Zc0WOs0aN2.jpg" },
+];
+
+export const seedBooks = [
+  { id: 301, title: "To Kill a Mockingbird", genre: "Fiction", rating: 9.3, image: "https://covers.openlibrary.org/b/id/8228691-L.jpg" },
+  { id: 302, title: "1984", genre: "Dystopian", rating: 9.0, image: "https://covers.openlibrary.org/b/id/7222246-L.jpg" },
+  { id: 303, title: "The Great Gatsby", genre: "Classic", rating: 8.8, image: "https://covers.openlibrary.org/b/id/7352168-L.jpg" },
+  { id: 304, title: "Pride and Prejudice", genre: "Romance", rating: 9.0, image: "https://covers.openlibrary.org/b/id/8091016-L.jpg" },
+  { id: 305, title: "The Catcher in the Rye", genre: "Fiction", rating: 8.5, image: "https://covers.openlibrary.org/b/id/8221266-L.jpg" },
+  { id: 306, title: "The Hobbit", genre: "Fantasy", rating: 8.9, image: "https://covers.openlibrary.org/b/id/6979861-L.jpg" },
+  { id: 307, title: "Moby-Dick", genre: "Adventure", rating: 8.4, image: "https://covers.openlibrary.org/b/id/6979866-L.jpg" },
+  { id: 308, title: "War and Peace", genre: "Historical", rating: 9.1, image: "https://covers.openlibrary.org/b/id/8231990-L.jpg" },
+  { id: 309, title: "Crime and Punishment", genre: "Psychological", rating: 9.0, image: "https://covers.openlibrary.org/b/id/8231855-L.jpg" },
+  { id: 310, title: "The Lord of the Rings", genre: "Fantasy", rating: 9.5, image: "https://covers.openlibrary.org/b/id/8231850-L.jpg" },
+  { id: 311, title: "Jane Eyre", genre: "Romance", rating: 8.7, image: "https://covers.openlibrary.org/b/id/8231900-L.jpg" },
+  { id: 312, title: "The Alchemist", genre: "Philosophical", rating: 8.6, image: "https://covers.openlibrary.org/b/id/8231996-L.jpg" },
+  { id: 313, title: "Brave New World", genre: "Dystopian", rating: 8.8, image: "https://covers.openlibrary.org/b/id/8232005-L.jpg" },
+  { id: 314, title: "The Little Prince", genre: "Children", rating: 9.0, image: "https://covers.openlibrary.org/b/id/8108698-L.jpg" },
+  { id: 315, title: "The Da Vinci Code", genre: "Mystery", rating: 7.9, image: "https://covers.openlibrary.org/b/id/240726-L.jpg" },
+];

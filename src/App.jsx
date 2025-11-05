@@ -6,6 +6,7 @@ import Movies from "./pages/Movies.jsx";
 import Books from "./pages/Books.jsx";
 import Reviews from "./pages/Reviews.jsx";
 import Login from "./pages/Login.jsx";
+import Signup from "./pages/Signup.jsx";
 import AddItem from "./components/AddItem.jsx";
 
 // initial seed arrays (15 movies + 15 books). IDs are unique.
@@ -30,30 +31,37 @@ export default function App() {
     const s = localStorage.getItem("users");
     return s ? JSON.parse(s) : [];
   });
+
   const [currentUser, setCurrentUser] = useState(() => {
     return localStorage.getItem("currentUser") || "";
   });
 
-  // persist
   useEffect(() => localStorage.setItem("movies", JSON.stringify(movies)), [movies]);
   useEffect(() => localStorage.setItem("books", JSON.stringify(books)), [books]);
   useEffect(() => localStorage.setItem("reviews", JSON.stringify(reviews)), [reviews]);
   useEffect(() => localStorage.setItem("users", JSON.stringify(users)), [users]);
   useEffect(() => localStorage.setItem("currentUser", currentUser), [currentUser]);
 
-  function loginOrRegister(username, password) {
+  // local auth functions (no backend)
+  function login(username, password) {
     const u = users.find((x) => x.username === username);
     if (!u) {
-      const nu = { username, password };
-      setUsers((p) => [...p, nu]);
-      setCurrentUser(username);
-      return { ok: true };
+      return { ok: false, message: "User not found" };
     }
     if (u.password === password) {
       setCurrentUser(username);
       return { ok: true };
     }
     return { ok: false, message: "Invalid password" };
+  }
+
+  function signup(username, password, role = 'user') {
+    const u = users.find((x) => x.username === username);
+    if (u) return { ok: false, message: "User already exists" };
+    const nu = { username, password, role };
+    setUsers((p) => [...p, nu]);
+    setCurrentUser(username);
+    return { ok: true };
   }
 
   function logout() {
@@ -90,7 +98,8 @@ export default function App() {
           <Route path="/movies" element={<Movies movies={movies} reviews={reviews} addReview={addReview} />} />
           <Route path="/books" element={<Books books={books} reviews={reviews} addReview={addReview} />} />
           <Route path="/reviews" element={<Reviews reviews={reviews} movies={movies} books={books} />} />
-          <Route path="/login" element={<Login onLogin={loginOrRegister} />} />
+          <Route path="/login" element={<Login onLogin={login} onSignup={signup} />} />
+          <Route path="/signup" element={<Signup onSignup={signup} />} />
           <Route path="/add" element={<AddItem currentUser={currentUser} addItem={addItem} />} />
         </Routes>
       </main>
