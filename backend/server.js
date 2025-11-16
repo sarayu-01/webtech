@@ -11,7 +11,11 @@ const bookRoutes = require('./routes/bookRoutes');
 const reviewRoutes = require('./routes/reviewRoutes');
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5174",
+  credentials: true
+}));
+
 app.use(express.json()); // parse JSON request bodies
 
 // Routes
