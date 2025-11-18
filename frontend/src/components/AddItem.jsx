@@ -10,14 +10,41 @@ export default function AddItem({ currentUser, addItem }) {
   const [image, setImage] = useState("");
 
   function submit(e) {
-    e.preventDefault();
-    if (!currentUser) { alert("Please login to add items."); nav("/login"); return; }
-    if (!title || !genre) { alert("Title and genre required"); return; }
-    const id = Date.now();
-    const item = { id, title, genre, rating: Number(rating) || 0, image };
-    addItem(kind === "movie" ? "movie" : "book", item);
-    nav(kind === "movie" ? "/movies" : "/books");
+  e.preventDefault();
+
+  if (!currentUser) { 
+    alert("Please login to add items."); 
+    nav("/login"); 
+    return; 
   }
+
+  if (!title || !genre) { 
+    alert("Title and genre required"); 
+    return; 
+  }
+
+  let item;
+
+  if (kind === "movie") {
+    item = { 
+      title, 
+      genre, 
+      rating: Number(rating) || 0, 
+      poster: image 
+    };
+  } else {
+    item = { 
+      title, 
+      genre, 
+      rating: Number(rating) || 0, 
+      cover: image
+    };
+  }
+
+  addItem(kind, item);
+  nav(kind === "movie" ? "/movies" : "/books");
+}
+
 
   return (
     <section className="page">

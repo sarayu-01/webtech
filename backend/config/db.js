@@ -1,19 +1,17 @@
 // config/db.js
-const { MongoClient } = require('mongodb');
-const uri = "mongodb://127.0.0.1:27017";
-const client = new MongoClient(uri);
-
-let db;
+const mongoose = require("mongoose");
 
 async function connectDB() {
-  await client.connect();
-  db = client.db('webtech'); // database name
-  console.log('MongoDB connected!');
+  try {
+    await mongoose.connect("mongodb://127.0.0.1:27017/webtech", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
+    console.log("MongoDB connected (Mongoose)");
+  } catch (error) {
+    console.error("MongoDB connection error:", error);
+    process.exit(1);
+  }
 }
 
-function getDB() {
-  if (!db) throw new Error('Database not connected!');
-  return db;
-}
-
-module.exports = { connectDB, getDB };
+module.exports = connectDB;

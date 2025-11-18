@@ -1,28 +1,9 @@
-// routes/movieRoutes.js
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { getMovieCollection } = require('../models/movieModel');
 
-// Add movie
-router.post('/add', async (req, res) => {
-  try {
-    const movies = getMovieCollection();
-    await movies.insertOne(req.body); // title, genre, description
-    res.send('Movie added!');
-  } catch (err) {
-    res.status(500).send(err.message);
-  }
-});
+const { getMovies, createMovie } = require("../controllers/movieController");
 
-// List movies
-router.get('/', async (req, res) => {
-  try {
-    const movies = getMovieCollection();
-    const all = await movies.find({}).toArray();
-    res.json(all);
-  } catch (err) {
-    res.status(500).send(err.message);
-  }
-});
+router.get("/", getMovies);
+router.post("/", createMovie);
 
 module.exports = router;

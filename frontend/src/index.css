@@ -156,3 +156,100 @@ body {
   .poster { height:200px; }
   .controls-row { flex-direction:column; gap:8px; }
 }
+
+.grid {
+  display: flex;
+  gap: 20px;
+}
+
+.item-card {
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.poster {
+  width: 150px;
+  height: 220px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.poster {
+  width: 180px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #ddd;
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.item-card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* --- POSTER STYLING --- */
+.poster {
+  width: 220px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #111;
+  display: block;
+}
+
+/* --- GRID LAYOUT --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* --- CARD --- */
+.item-card {
+  text-decoration: none;
+  color: white;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  width: 200px;
+  background: var(--card);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.card h4 {
+  margin: 8px 0 4px;
+  font-size: 1rem;
+}
+
+.card p {
+  margin: 0;
+  opacity: 0.8;
+}

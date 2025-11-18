@@ -1,27 +1,68 @@
 import React from "react";
-import ReviewCard from "../components/ReviewCard.jsx";
 import { Link } from "react-router-dom";
 
-export default function Home({ movies = [], books = [] }) {
+export default function Home({ movies, books, reviews }) {
   return (
-    <section className="page home">
-      <h2>Welcome to ReviewHub</h2>
-      <p className="lead">Discover curated movies and books — rate, review, and add your favorites.</p>
+    <div className="home-container">
 
-      <h3>Top Movies</h3>
-      <div className="grid">
-        {movies.slice(0,6).map(m => <ReviewCard key={m.id} {...m} />)}
-      </div>
+      <h1 align="center">WELCOME TO REVIEW HUB</h1>
 
-      <h3>Top Books</h3>
-      <div className="grid">
-        {books.slice(0,6).map(b => <ReviewCard key={b.id} {...b} />)}
-      </div>
+      <section>
+        <h2>Movies</h2>
 
-      <div className="cta">
-        <Link to="/movies" className="btn">See all movies</Link>
-        <Link to="/books" className="btn">See all books</Link>
-      </div>
-    </section>
+        {movies.length === 0 ? (
+          <p>No movies found.</p>
+        ) : (
+          <div className="grid">
+            {movies.slice(0, 4).map((m) => (
+              <Link key={m._id || m.id} to="/movies" className="item-card">
+                <img
+                  src={m.poster}
+                  alt={m.title}
+                  className="poster"
+                />
+                <p>{m.title}</p>
+              </Link>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section>
+        <h2>Books</h2>
+
+        {books.length === 0 ? (
+          <p>No books found.</p>
+        ) : (
+          <div className="grid">
+            {books.slice(0, 4).map((b) => (
+              <Link key={b._id || b.id} to="/books" className="item-card">
+                <img
+                  src={b.image}
+                  alt={b.title}
+                  className="poster"
+                />
+                <p>{b.title}</p>
+              </Link>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section>
+        <h2>Latest Reviews</h2>
+
+        {reviews.length === 0 ? (
+          <p>No reviews yet.</p>
+        ) : (
+          <ul>
+            {reviews.slice(0, 5).map((r) => (
+              <li key={r._id}>{r.text}</li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+    </div>
   );
 }
